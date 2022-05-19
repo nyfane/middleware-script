@@ -4,18 +4,19 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Build Step'
-                sleep 10
+                sleep 5
             }
         }
         stage('Test') {
             steps {
                 echo 'Test step'
+                sleep 5
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploy Step'
-                sleep 10
+                sleep 5
             }
         }
         stage('Docker') {
