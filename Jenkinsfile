@@ -4,7 +4,7 @@ pipeline {
         maven ('M2_HOME')
     }
     environment {
-    registry = '823008317281.dkr.ecr.us-west-2.amazonaws.com/devops_repos'
+    registry = '823008317281.dkr.ecr.us-east-1.amazonaws.com/devops_repo'
     registryCredential = 'jenkins-ecr'
     dockerimage = ''
   }
@@ -36,7 +36,7 @@ pipeline {
      stage('Deployment image') {
             steps{
                 script{ 
-                    docker.withRegistry("https://"+registry,"ecr:us-west-2:"+registryCredential) {
+                    docker.withRegistry("https://"+registry,"ecr:us-east-1:"+registryCredential) {
                         dockerImage.push()
                     }
                 }
