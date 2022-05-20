@@ -29,7 +29,7 @@ pipeline {
         stage('Build Image') {
             steps {
                 script{
-                    dockerImage = docker.build registry + ":${9}"
+                    dockerImage = docker.build registry + ":${10}"
                 } 
             }
         }
