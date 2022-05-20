@@ -29,14 +29,14 @@ pipeline {
         stage('Build Image') {
             steps {
                 script{
-                    dockerImage = docker.build 	Jenkins-ecr + ":${9}"
+                    dockerImage = docker.build registry + ":${9}"
                 } 
             }
         }
      stage('Deployment image') {
             steps{
                 script{ 
-                    docker.withRegistry("https://"+	Jenkins-ecr,"ecr:us-west-2:"+AKIA37HY6J5QQVTTOJPJ) {
+                    docker.withRegistry("https://"+	registry,"ecr:us-west-2:"+AKIA37HY6J5QQVTTOJPJ) {
                         dockerImage.push()
                     }
                 }
